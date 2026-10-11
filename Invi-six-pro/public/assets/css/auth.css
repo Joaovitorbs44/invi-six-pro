@@ -1,0 +1,22 @@
+.auth-page{background:var(--surface);color:var(--foreground);font-family:Geist,system-ui,sans-serif;padding:0!important}
+.auth-layout.auth-flex{display:flex;flex-direction:row;align-items:center;justify-content:center;width:100%;max-width:none;min-height:calc(100svh - 104px);gap:64px;padding:48px var(--ui-section-padding)}
+.auth-flex>.auth-intro,.auth-flex>.auth-form-column{flex:1 1 0;min-width:0;width:100%}
+.auth-intro{min-width:0}.auth-intro>span{font-size:10px;letter-spacing:.08em;text-transform:uppercase;border-radius:8px}
+.auth-intro h1{font-size:36px;line-height:1.15;letter-spacing:-.045em}.auth-intro p{font-size:13px;line-height:1.8}.auth-intro>p{font-size:14px;max-width:360px}
+.auth-form-column{display:flex;justify-content:center;min-width:0}.auth-form-content{width:100%;max-width:460px}
+.auth-form-content h2{font-size:26px;line-height:1.25;letter-spacing:-.04em}.auth-form-content>p,.auth-form-content>div>p{font-size:13px;line-height:1.7}
+.auth-form-content form{position:relative}.auth-form-content .ui-field{margin:12px 0 4px}.auth-form-content form button.h-12{border-radius:12px;line-height:1;height:48px;gap:8px}
+.auth-form-content form button[type=submit]{grid-column:1/-1;width:100%}.auth-form-content form button[id$="-back"]{grid-column:1/-1;width:100%;grid-row:2}
+.auth-form-content [id$="-step-description"]{min-height:44px}.auth-form-content [id$="-step-title"]{min-height:33px}
+.auth-page:not(.auth-enhanced) button[id$="-next"],.auth-page:not(.auth-enhanced) button[id$="-back"],.auth-page:not(.auth-enhanced) #change-player,.auth-page:not(.auth-enhanced) #change-register-player{display:none}
+.auth-page:not(.auth-enhanced) #toggle-password{display:none}
+.auth-page:not(.auth-enhanced) [data-login-step="2"],.auth-page:not(.auth-enhanced) [data-register-step="2"]{margin-top:28px}
+.auth-return{text-align:center;margin:28px auto 0;font-size:12px;color:var(--muted-foreground)}.auth-return a:hover{color:var(--primary)}.auth-nojs{font-size:12px;color:var(--muted-foreground);line-height:1.7;margin-top:16px}
+.auth-error{font-size:12px;line-height:1.6;color:var(--error);border:1px solid var(--border);background:var(--error-surface);border-radius:12px;padding:12px;margin-bottom:20px}
+.auth-connected{display:flex;min-height:calc(100svh - 104px);padding:48px var(--ui-section-padding)!important;align-items:center;justify-content:center}
+.auth-select-icon{position:absolute;right:16px;top:50%;transform:translateY(-50%);pointer-events:none;color:var(--muted-foreground)}
+.auth-connected-content{max-width:540px;width:100%;margin:auto;text-align:center}.auth-eyebrow{font-size:10px;color:var(--primary);letter-spacing:.1em}.auth-connected h1{font-size:34px;line-height:1.2;letter-spacing:-.04em;margin:16px 0}.auth-connected-content>p:last-of-type{font-size:14px;color:var(--muted-foreground);line-height:1.7}
+.auth-connected-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:28px}.auth-primary,.auth-secondary{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 20px;border-radius:12px;font-size:12px;font-weight:500}.auth-primary{background:var(--primary);color:var(--on-primary)}.auth-primary:hover{background:var(--primary-hover)}.auth-secondary{border:1px solid var(--border);background:var(--surface)}.auth-secondary:hover{background:var(--secondary-background)}
+@media(max-width:1023px){.auth-layout.auth-flex{min-height:calc(100svh - 96px);gap:32px;padding-top:40px;padding-bottom:40px}.auth-intro h1{font-size:32px}}
+@media(max-width:767px){.auth-layout.auth-flex{flex-direction:column;align-items:stretch;gap:32px;padding-top:32px;padding-bottom:32px}.auth-flex>.auth-intro,.auth-flex>.auth-form-column{flex:0 1 auto}.auth-intro>div{display:none}.auth-intro h1{margin-top:16px;font-size:32px}.auth-intro>p{margin-top:12px;max-width:none;font-size:13px}.auth-form-content{max-width:460px}.auth-form-content h2{font-size:24px}.auth-connected-actions{flex-direction:column}.auth-connected h1{font-size:28px}}
+@media(prefers-reduced-motion:reduce){.auth-page *{animation:none!important;transition:none!important}}
