@@ -1,5 +1,6 @@
 {
   "version": 2,
+  "regions": ["gru1"],
   "installCommand": "npm ci --include=dev",
   "buildCommand": "npm run build",
   "outputDirectory": "public",
@@ -12,6 +13,9 @@
   "routes": [
     {
       "src": "/assets/(.*)",
+      "headers": {
+        "Cache-Control": "public, max-age=3600, s-maxage=86400"
+      },
       "dest": "/assets/$1"
     },
     {

@@ -1,0 +1,16 @@
+.env
+.env.*
+node_modules
+.git
+.agents
+.codex
+.aws
+*.pem
+*.key
+*.p12
+*.pfx
+docs
+scripts
+*.log
+public/README.md
+README.md
