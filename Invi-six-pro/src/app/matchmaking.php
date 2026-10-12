@@ -118,7 +118,7 @@ require_once __DIR__ . '/../components/header.php';
               <form action="/matchmaking/join" method="POST" id="mm-join-form" class="<?= !$player ? 'mm-first-entry' : '' ?>" <?= $isInQueue || $match ? 'hidden' : '' ?>>
                 <?= csrfField() ?>
                 <?php if (!$player && isAdmin()) { ?>
-                  <div><div class="ui-field h-12"><fieldset class="ui-field-outline"><legend><label class="ui-field-label" for="mm-rank">Seu rank atual</label></legend><select id="mm-rank" name="r6_rank" required><option value="">Selecione seu rank</option><?php foreach (matchmakingRanks() as $rank) { ?><option value="<?= e($rank) ?>"><?= e($rank) ?></option><?php } ?></select></fieldset></div></div>
+                  <div><div class="ui-field"><label class="ui-field-label" for="mm-rank">Seu rank atual</label><select id="mm-rank" name="r6_rank" required><option value="">Selecione seu rank</option><?php foreach (matchmakingRanks() as $rank) { ?><option value="<?= e($rank) ?>"><?= e($rank) ?></option><?php } ?></select></div></div>
                 <?php } ?>
                 <button type="submit" class="mm-button mm-button-primary" id="mm-join" <?= $queueCount >= $queueTarget || $state['queue_busy'] || $match || $restricted || !$season ? 'disabled' : '' ?>><?= faIcon('play') ?><span><?= $queueCount >= $queueTarget ? 'Fila completa' : 'Entrar na fila' ?></span></button>
               </form>

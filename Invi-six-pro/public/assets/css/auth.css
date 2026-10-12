@@ -5,7 +5,7 @@
 .auth-intro h1{font-size:32px;line-height:1.15;letter-spacing:-.045em}.auth-intro p{font-size:13px;line-height:1.8}.auth-intro>p{font-size:14px;max-width:360px}
 .auth-form-column{display:flex;justify-content:center;min-width:0}.auth-form-content{width:100%;max-width:460px}
 .auth-form-content h2{font-size:24px;line-height:1.25;letter-spacing:-.04em}.auth-form-content>p,.auth-form-content>div>p{font-size:13px;line-height:1.7}
-.auth-form-content form{position:relative}.auth-form-content .ui-field{margin:12px 0 4px}.auth-form-content form button.h-12{border-radius:12px;line-height:1;height:48px;gap:8px}
+.auth-form-content form{position:relative}.auth-form-content form button.h-12{border-radius:12px;line-height:1;height:48px;gap:8px}
 .auth-form-content form button[type=submit]{grid-column:1/-1;width:100%}.auth-form-content form button[id$="-back"]{grid-column:1/-1;width:100%;grid-row:2}
 .auth-form-content [id$="-step-description"]{min-height:44px}.auth-form-content [id$="-step-title"]{min-height:33px}
 .auth-page:not(.auth-enhanced) button[id$="-next"],.auth-page:not(.auth-enhanced) button[id$="-back"],.auth-page:not(.auth-enhanced) #change-player,.auth-page:not(.auth-enhanced) #change-register-player{display:none}

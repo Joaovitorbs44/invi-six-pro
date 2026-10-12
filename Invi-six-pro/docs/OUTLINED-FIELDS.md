@@ -1,5 +1,7 @@
 # Campos outlined e validação antes de publicar
 
+> Histórico da implementação anterior. O padrão atual usa labels acima dos campos, sem fieldset/legend. Consulte [VISUAL-FIXES.md](VISUAL-FIXES.md) para a correção que substitui este visual.
+
 Os 36 inputs de texto, selects e textareas usam um único padrão compartilhado em `public/assets/css/forms-responsive.css`. Inputs ocultos e checkboxes mantêm sua semântica original.
 
 ```html

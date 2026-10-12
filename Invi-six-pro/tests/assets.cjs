@@ -33,32 +33,17 @@ for(const match of cssEntry.matchAll(/@(import|source)\s+"(\.[^";]+)"/g)){
 }
 for(const file of files('src').filter(f=>f.endsWith('.php'))){
  const source=fs.readFileSync(file,'utf8');
- // Check label/control associations across templates without executing PHP or
- // touching authentication/database endpoints. Hidden/checkbox inputs keep
- // their existing semantics and are not outlined text controls.
- const html=source.replace(/<\?(?:php|=)[\s\S]*?\?>/g,''),fieldsets=[];
+ // Labels are associated with visible controls; legacy outlined wrappers are forbidden.
+ const html=source.replace(/<\?(?:php|=)[\s\S]*?\?>/g,'');
  const attribute=(attrs,name)=>attrs.match(new RegExp(`\\b${name}=(['"])([^'"]*)\\1`))?.[2];
- for(const tag of html.matchAll(/<(\/?)(fieldset|legend|label|input|select|textarea)\b([^>]*)>/g)){
-  const [,closing,name,attrs]=tag;
-  if(name==='fieldset'){
-   if(!closing)fieldsets.push({outlined:(attribute(attrs,'class')||'').split(/\s+/).includes('ui-field-outline'),legend:false,labels:[],controls:0});
-   else {const field=fieldsets.pop();if(field?.outlined&&field.controls!==1)errors.push(`${file}: outlined field must have one control`);}
-   continue;
-  }
-  const field=fieldsets.at(-1);
-  if(name==='legend'){if(field)field.legend=!closing;continue;}
-  if(closing)continue;
-  if(name==='label'){if(field?.legend)field.labels.push(attribute(attrs,'for'));continue;}
+ const labels=[...html.matchAll(/<label\b([^>]*)>/g)].map(tag=>attribute(tag[1],'for'));
+ if(/<(?:fieldset|legend)\b/.test(html))errors.push(file+': legacy fieldset/legend');
+ for(const tag of html.matchAll(/<(input|select|textarea)\b([^>]*)>/g)){
+  const [,name,attrs]=tag;
   if(name==='input'&&['hidden','checkbox','radio','submit','button'].includes(attribute(attrs,'type')))continue;
-  checks++;
-  const id=attribute(attrs,'id');
-  if(!field?.outlined||!id||!field.labels.includes(id))errors.push(`${file}: ${name} ${id||'(no id)'} needs an outlined legend label`);
-  if(field)field.controls++;
+  checks++;const id=attribute(attrs,'id');
+  if(!id||!labels.includes(id))errors.push(file+': missing associated label for '+(id||name));
  }
- for(const field of source.matchAll(/<fieldset\b[^>]*class="ui-field[^>]*>([\s\S]*?)<\/fieldset>/g)){
-  checks++;if(!/<legend>\s*<label\b/.test(field[1]))errors.push(file+': missing legend label');
- }
- if(/<div\b[^>]*class="ui-field[^>]*>\s*<label\b/.test(source))errors.push(file+': legacy floating label');
  for(const match of source.matchAll(/(?:src|href)=["'](\/assets\/[^"'<>?]+)["']|assetUrl\(['"](\/assets\/[^'"?]+)['"]\)/g)){
   match[1] ||= match[2];
   if(match[1].includes('<?'))continue;

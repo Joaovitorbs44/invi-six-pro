@@ -84,8 +84,8 @@ require_once __DIR__ . '/icons.php';
             <?php if ($headerLoggedIn): ?>
               <a class="site-support-link" href="<?= $headerStaff?'/admin/support':'/support' ?>"><?= faIcon('shield-halved') ?><span>Suporte</span><?php if ($supportUnread): ?><span class="site-unread" aria-label="<?= $supportUnread ?> mensagens não lidas"><?= $supportUnread ?></span><?php endif; ?></a>
               <details class="site-profile-menu" data-profile-menu>
-                <summary><span class="site-account-avatar" aria-hidden="true"><?= e(mb_strtoupper(mb_substr($headerNickname,0,1))) ?></span><span class="site-account-name"><?= e($headerNickname) ?></span><span class="site-chevron" aria-hidden="true"><?= faIcon('chevron-down', 'fa-sm') ?></span></summary>
-                <div class="site-profile-panel">
+                <summary aria-expanded="false" aria-controls="site-profile-panel"><span class="site-account-avatar" aria-hidden="true"><?= e(mb_strtoupper(mb_substr($headerNickname,0,1))) ?></span><span class="site-account-name"><?= e($headerNickname) ?></span><span class="site-chevron" aria-hidden="true"><?= faIcon('chevron-down', 'fa-sm') ?></span></summary>
+                <div class="site-profile-panel" id="site-profile-panel">
                   <p class="site-profile-caption"><?= e($headerNickname) ?><span><?= $headerRole==='admin'?'Administrador':($headerRole==='staff'?'Staff':'Jogador') ?></span></p>
                   <a href="/perfil">Meu perfil</a>
                   <?php if ($headerRole !== 'staff'): ?><a href="/matchmaking">Matchmaking</a><?php endif; ?>

@@ -193,24 +193,16 @@ main .cx-empty-panel{border-radius:12px;background:var(--ui-surface)}main .cx-em
 main .cx-modal{background:#11111166;backdrop-filter:none}main .cx-modal>.cx-card{border-radius:16px;box-shadow:0 12px 40px #11111114}
 main .cx-confirm-dialog{border:1px solid var(--ui-border);border-radius:16px;box-shadow:0 12px 40px #11111114}
 #toast-container [data-toast]{border-radius:12px;border-color:var(--ui-border);box-shadow:0 4px 20px #11111108;opacity:1;transform:none;transition:opacity .16s,transform .16s}
-/* Permanent notched labels: HTML supplies the association and works without JS. */
-main .ui-field{position:relative;display:block;min-width:0;width:100%;margin:12px 0 4px;isolation:isolate}
-main .ui-field ::placeholder{color:var(--muted-foreground);font-size:12px}
-main .cx-filters>.ui-field,main .cx-filters form>.ui-field{flex:1 1 160px;width:auto}
-main .cx-reply>.ui-field{flex:1;margin-top:12px}main .cx-reply>.ui-field>textarea{width:100%;min-height:80px}
-main .cx-form>.ui-field{margin:20px 0}main .ui-field .cx-private-label{white-space:normal}
 @media(min-width:1280px){.site-navigation:not([open])>.site-navigation-content{display:flex!important}}
 @media(max-width:1279px){.site-header-inner{min-height:68px;justify-content:space-between;gap:16px}.site-navigation{flex:0 0 auto}.site-menu-toggle{display:flex;align-items:center;gap:8px;padding:10px 12px;border:1px solid var(--ui-border);border-radius:8px;cursor:pointer;color:var(--ui-muted)}.site-navigation-content{position:absolute;left:0;right:0;top:100%;padding:16px 24px 24px;background:var(--surface);border-bottom:1px solid var(--ui-border);box-shadow:0 8px 20px #11111105;align-items:stretch;flex-direction:column;gap:18px}.site-navigation:not([open])>.site-navigation-content{display:none!important}.site-primary-nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.site-primary-nav>a{padding:12px;border-radius:8px;background:var(--ui-surface)}.site-primary-nav>a[aria-current=page]:after{display:none}.site-primary-nav>a[aria-current=page]{color:var(--ui-primary)}.site-account-nav{margin:0;justify-content:space-between}.site-profile-panel{max-width:calc(100vw - 48px)}}
-@media(max-width:640px){.site-header-inner{padding:0 16px}.site-navigation-content{padding:16px}.site-account-name{max-width:120px}.site-footer-main{padding:32px 16px;gap:28px;grid-template-columns:1fr 1fr}.site-footer-main>div{grid-column:1/-1}.site-footer-bottom{padding:16px;flex-direction:column;gap:4px}main .cx-shell{padding:28px 16px}main .cx-heading{gap:16px}main .cx-filters>.ui-field{flex-basis:100%}main .cx-reply{flex-wrap:wrap}main .cx-reply>.ui-field{flex-basis:100%}}
+@media(max-width:640px){.site-header-inner{padding:0 16px}.site-navigation-content{padding:16px}.site-account-name{max-width:120px}.site-footer-main{padding:32px 16px;gap:28px;grid-template-columns:1fr 1fr}.site-footer-main>div{grid-column:1/-1}.site-footer-bottom{padding:16px;flex-direction:column;gap:4px}main .cx-shell{padding:28px 16px}main .cx-heading{gap:16px}main .cx-reply{flex-wrap:wrap}}
 @media(prefers-reduced-motion:reduce){a,button,input,select,textarea,summary{transition:none}}
 
-main form button{border-radius:8px}main form .ui-field:has(>.ui-field-label)>input:is([type=password],[name=r6_rank]){padding-right:56px}
-main .cx-ranking-card{background:var(--surface);color:var(--ui-text)}main .cx-ranking-search>.ui-field:has(input){flex:2 1 220px}main .cx-ranking-search>.ui-field:has(select){flex:1 1 160px}
-main .ui-field .cx-private-label{display:block;padding:8px 4px;font-size:12px;color:var(--ui-muted)}
+main form button{border-radius:8px}
+main .cx-ranking-card{background:var(--surface);color:var(--ui-text)}
 main .arena-loading{border:1px solid var(--ui-border);background:var(--ui-surface);border-radius:12px;padding:24px;color:var(--ui-muted)}
-main .arena-refresh-error{background:var(--primary-surface);border:1px solid var(--border);border-radius:10px;padding:14px;color:#9f241c;font-size:12px}
-main .mm-first-entry .ui-field>select{max-width:none}main .mm-search-state{border-bottom:1px solid var(--ui-border)}
-@media(max-width:640px){main .cx-ranking-search>.ui-field:has(input){flex-basis:100%}main .cx-ranking-search>.ui-field:has(select){flex:1 1 120px}}
+main .arena-refresh-error{background:var(--primary-surface);border:1px solid var(--border);border-radius:10px;padding:14px;color:#9f241c;font-size:12px}main .mm-search-state{border-bottom:1px solid var(--ui-border)}
+@media(max-width:640px){}
 
 /* Match the protected landing's responsive spacing without padding inner cards twice. */
 :root{--ui-section-padding:20px}
@@ -228,12 +220,6 @@ main>section:not(#invitational):not(:has(.hero-r6-image)){padding-left:var(--ui-
 .site-header,#main-content{font-family:Geist,system-ui,sans-serif}
 svg.fa-icon{display:inline-block;vertical-align:middle;width:var(--fa-size,16px)!important;height:var(--fa-size,16px)!important;flex-shrink:0;fill:currentColor}
 .fa-sm{--fa-size:14px}.fa-lg{--fa-size:20px}
-/* Neutralize browser autofill while retaining focus/error borders and autocomplete. */
-main form .ui-field>input:autofill{background:var(--surface);color:var(--foreground);box-shadow:inset 0 0 0 1000px var(--surface)!important;caret-color:var(--foreground);font-family:Geist,system-ui,sans-serif}
-main form .ui-field>input:-webkit-autofill,
-main form .ui-field>input:-webkit-autofill:hover,
-main form .ui-field>input:-webkit-autofill:focus,
-main form .ui-field>input:-webkit-autofill:active{-webkit-text-fill-color:var(--foreground);-webkit-box-shadow:inset 0 0 0 1000px var(--surface)!important;box-shadow:inset 0 0 0 1000px var(--surface)!important;background:var(--surface);caret-color:var(--foreground);font-family:Geist,system-ui,sans-serif;font-size:12px;font-weight:400}
 .testing-banner{padding:6px 20px;text-align:center;background:var(--secondary-background);border-bottom:1px solid var(--border);color:var(--muted-foreground);font-size:12px;font-family:Geist,system-ui,sans-serif}
 /* Community identity shares the outer gutter; its cards never add another gutter. */
 .community-shell{padding:28px var(--ui-section-padding) 0;font-family:Geist,system-ui,sans-serif;color:var(--foreground);min-width:0}
@@ -252,10 +238,8 @@ main button:not(:has(input)):not(.absolute):not([data-close-toast]){display:inli
 main button[class~="h-11"]{height:48px;min-height:48px;border-radius:12px}
 main :is(.cx-button,.cx-primary,.mm-button) svg{width:16px;height:16px;flex-shrink:0}
 main .cx-filters,main .cx-filters form{gap:12px;align-items:flex-start}
-main .cx-filters>.ui-field,main .cx-filters form>.ui-field,main .mm-first-entry .ui-field{margin:0}
 main .cx-filters{padding-top:8px}.cx-filters>.cx-link{display:inline-flex;align-items:center;min-height:48px;line-height:1}
 main .cx-twitch-form{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:start}
-main .cx-twitch-form>.ui-field{width:100%}
 .site-login-button,.site-menu-toggle,.site-support-link{min-height:40px;align-items:center;justify-content:center;line-height:1;gap:8px;flex-shrink:0}
 .site-logo img{width:148px;height:56px}.site-profile-panel button{justify-content:flex-start;min-height:40px;line-height:1}
 @media(min-width:1024px){.site-header-inner{gap:24px}.site-primary-nav{gap:18px}.site-primary-nav>a{font-size:12px}.site-account-name{max-width:96px}}
@@ -271,17 +255,16 @@ main .cx-twitch-form>.ui-field{width:100%}
 @media(prefers-reduced-motion:reduce){.player-panel,.player-panel[data-closing=true]{animation:none;transition:none;transform:none}}
 main :is(.request-filter,.admin-tab){height:36px;min-height:36px;padding:0 14px;border-radius:8px;flex-shrink:0}
 main [aria-label="Filtrar solicitações"]{flex-wrap:wrap}
-#toast-container{top:88px;right:20px;max-height:calc(100dvh - 108px);overflow-y:auto}
+#toast-container{top:88px;right:20px;max-height:none;overflow:visible}
 main .arena-board .arena-player-action{min-height:36px;padding:0 8px;border-radius:8px}
 main .arena-board .cx-button.cx-primary{background:var(--primary);border-color:var(--primary);color:var(--on-primary)}
 main .arena-board .cx-button.cx-primary:hover{background:var(--primary-hover);border-color:var(--primary-hover)}
-@media(max-width:767px){.community-heading{flex-wrap:wrap;gap:14px;padding:18px}.community-logo{width:44px;height:44px}.community-copy h2{font-size:20px}.community-meta{max-width:100%;flex-direction:row;align-items:center;flex-wrap:wrap;gap:10px 16px;flex-basis:100%;padding-top:12px;border-top:1px solid var(--border)}.community-eyebrow{font-size:12px}.community-copy>p:last-child{font-size:12px}main .cx-twitch-form{grid-template-columns:1fr}main .cx-filters>.ui-field,main .cx-filters form>.ui-field{flex-basis:100%;width:100%}main .cx-filters>button,main .cx-filters form>button{width:100%}}
+@media(max-width:767px){.community-heading{flex-wrap:wrap;gap:14px;padding:18px}.community-logo{width:44px;height:44px}.community-copy h2{font-size:20px}.community-meta{max-width:100%;flex-direction:row;align-items:center;flex-wrap:wrap;gap:10px 16px;flex-basis:100%;padding-top:12px;border-top:1px solid var(--border)}.community-eyebrow{font-size:12px}.community-copy>p:last-child{font-size:12px}main .cx-twitch-form{grid-template-columns:1fr}main .cx-filters>button,main .cx-filters form>button{width:100%}}
 :where(button,.cx-button,.mm-button,.site-login-button){transition:background-color .18s,border-color .18s,color .18s,box-shadow .18s,transform .18s}
 :where(button,.cx-button,.mm-button,.site-login-button):not(:disabled):active{transform:scale(.985)}
 :where(a.cx-card,a.mm-card,.cx-ticket){transition:border-color .22s,box-shadow .22s}
 :where(a.cx-card,a.mm-card,.cx-ticket):hover{border-color:var(--border);box-shadow:0 3px 12px #11111105}
 form[aria-busy=true] button[type=submit]{cursor:progress}
-.ui-field-error{display:block;margin:6px 4px 0;color:var(--error);font-size:12px;line-height:1.6}
 [data-ui-modal=true]:not(dialog):not([hidden]):not(.hidden){animation:ui-overlay-in .28s ease-out}
 [data-ui-modal=true][data-motion=closing]:not(dialog){animation:ui-overlay-out .2s ease-in forwards}
 [data-ui-modal=true][data-motion=closing]:not(dialog)>[role=dialog],dialog[data-ui-modal=true][data-motion=closing]{animation:ui-modal-out .2s ease-in forwards;pointer-events:none}

@@ -515,14 +515,14 @@ require_once __DIR__ . '/../components/header.php';
 
                 </div>
 
-                <div class="ui-field h-12 w-full max-w-xs"><fieldset class="ui-field-outline"><legend><label class="ui-field-label" for="user-search">Buscar usuário</label></legend>
+                <div class="ui-field w-full max-w-xs"><label class="ui-field-label" for="user-search">Buscar usuário</label>
 <input type="search" id="user-search"
                         placeholder="Buscar usuário..."
                         autocomplete="off"
-                        class="h-10 w-full rounded-lg border border-border bg-surface px-4 text-xs text-foreground outline-none transition placeholder:text-muted hover:border-border focus:border-[#FF3D2C] focus:ring-2 focus:ring-[#FF3D2C]/10"
+                       
                     >
 
-                </fieldset></div>
+                </div>
 
             </div>
 
@@ -927,7 +927,7 @@ require_once __DIR__ . '/../components/header.php';
 
             <div class="relative mt-2">
 
-                <div class="ui-field h-12"><fieldset class="ui-field-outline"><legend><label class="ui-field-label" for="reset-password-input">Nova senha</label></legend><input
+                <div class="ui-field"><label class="ui-field-label" for="reset-password-input">Nova senha</label><input
                     type="password"
                     name="password"
                     id="reset-password-input"
@@ -935,8 +935,8 @@ require_once __DIR__ . '/../components/header.php';
                     minlength="8"
                     autocomplete="new-password"
                     placeholder="Mínimo de 8 caracteres"
-                    class="h-12 w-full rounded-lg border border-border bg-surface px-4 pr-20 text-xs text-foreground outline-none transition placeholder:text-muted hover:border-border focus:border-[#FF3D2C] focus:ring-2 focus:ring-[#FF3D2C]/10"
-                ></fieldset></div>
+                   
+                ></div>
 
                 <button
                     type="button"

@@ -359,7 +359,7 @@ require_once __DIR__ . '/../components/header.php';
 
                             
 
-                            <div class="ui-field h-12"><fieldset class="ui-field-outline"><legend><label class="ui-field-label" for="r6_nickname">Nick no Rainbow Six Siege</label></legend><input
+                            <div class="ui-field"><label class="ui-field-label" for="r6_nickname">Nick no Rainbow Six Siege</label><input
                                 type="text"
                                 id="r6_nickname" <?php if ($authError): ?>aria-describedby="auth-error"<?php endif; ?>
                                 name="r6_nickname"
@@ -368,8 +368,8 @@ require_once __DIR__ . '/../components/header.php';
                                 autocomplete="username"
                                 required
                                 maxlength="50"
-                                class="h-12 w-full rounded-lg border border-border bg-surface px-4 text-xs text-foreground outline-none transition placeholder:text-muted hover:border-border focus:border-[#FF3D2C] focus:ring-2 focus:ring-[#FF3D2C]/10"
-                            ></fieldset></div>
+                               
+                            ></div>
 
                             <button
                                 type="button"
@@ -426,15 +426,15 @@ require_once __DIR__ . '/../components/header.php';
 
                                 <div class="relative">
 
-                                    <div class="ui-field h-12"><fieldset class="ui-field-outline"><legend><label class="ui-field-label" for="password">Senha</label></legend><input
+                                    <div class="ui-field"><label class="ui-field-label" for="password">Senha</label><input
                                         type="password"
                                         id="password" <?php if ($authError): ?>aria-describedby="auth-error"<?php endif; ?>
                                         name="password"
                                         placeholder="Digite sua senha"
                                         autocomplete="current-password"
                                         required
-                                        class="h-12 w-full rounded-lg border border-border bg-surface px-4 pr-16 text-xs text-foreground outline-none transition placeholder:text-muted hover:border-border focus:border-[#FF3D2C] focus:ring-2 focus:ring-[#FF3D2C]/10"
-                                    ></fieldset></div>
+                                       
+                                    ></div>
 
                                     <button
                                         type="button"

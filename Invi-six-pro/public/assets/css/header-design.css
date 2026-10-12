@@ -14,7 +14,7 @@ body .site-primary-nav>a[aria-current=page]{color:var(--foreground)}
 body .site-navigation-content{overflow:visible;max-height:none}
 @media(max-width:1279px){
   body .site-header-inner{min-height:72px;justify-content:space-between;gap:16px}
-  body .site-navigation-content{background:var(--surface);max-height:calc(100dvh - 72px);overflow-y:auto;padding:16px;gap:16px}
+  body .site-navigation-content{background:var(--surface);max-height:calc(100dvh - 72px);overflow:visible;padding:16px;gap:16px}
   body .site-primary-nav{gap:10px;grid-template-columns:repeat(2,minmax(0,1fr))}
   body .site-primary-nav>a{padding:12px;white-space:normal}
   body .site-account-nav{flex-wrap:wrap;gap:12px}
@@ -24,7 +24,7 @@ body .site-navigation-content{overflow:visible;max-height:none}
   body .site-header-inner{padding-inline:16px}
   body .site-primary-nav{grid-template-columns:minmax(0,1fr)}
   body .site-account-name{max-width:120px}
-  body .site-profile-panel{position:static;margin-top:12px;width:min(260px,calc(100vw - 32px))}
+  body .site-profile-panel{position:absolute;top:calc(100% + 8px);right:0;margin-top:0;width:min(260px,calc(100vw - 32px))}
 }
 @media(min-width:1280px) and (max-width:1535px){
   body .site-header-inner{gap:20px}

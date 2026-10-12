@@ -102,21 +102,55 @@ document.addEventListener("DOMContentLoaded", () => {
   const navigation = document.querySelector("[data-navigation]");
   const profile = document.querySelector("[data-profile-menu]");
   const desktop = window.matchMedia("(min-width: 1280px)");
+  const profileTrigger = profile?.querySelector("summary");
+  const profilePanel = profile?.querySelector(".site-profile-panel");
+  let profileAnimation;
+  let profileClosing = false;
+  let profileTimer;
+  function setProfile(open) {
+    if (!profile || !profilePanel) return;
+    profileAnimation?.cancel();
+    window.clearTimeout(profileTimer);
+    profileClosing = !open;
+    profileTrigger.setAttribute("aria-expanded", String(open));
+    if (open) profile.open = true;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || !profilePanel.animate) {
+      profile.open = open;
+      profileClosing = false;
+      return;
+    }
+    profileAnimation = profilePanel.animate(open ? [
+      {opacity:0,transform:"translateY(8px)"}, {opacity:1,transform:"translateY(0)"},
+    ] : [
+      {opacity:1,transform:"translateY(0)"}, {opacity:0,transform:"translateY(8px)"},
+    ], {duration:200,easing:"cubic-bezier(.22,1,.36,1)"});
+    const finish = () => {
+      profile.open = open;
+      profileClosing = false;
+      profileAnimation?.cancel();
+      profileAnimation = null;
+    };
+    profileTimer = window.setTimeout(finish, 200);
+  }
+  profileTrigger?.addEventListener("click", event => {
+    event.preventDefault();
+    setProfile(!profile.open || profileClosing);
+  });
   function syncNavigation() {
     if (!navigation) return;
     navigation.open = desktop.matches;
-    if (profile) profile.open = false;
+    setProfile(false);
   }
   syncNavigation();
   desktop.addEventListener("change", syncNavigation);
   document.addEventListener("click", (event) => {
-    if (profile?.open && !profile.contains(event.target)) profile.open = false;
+    if (profile?.open && !profileClosing && !profile.contains(event.target)) setProfile(false);
     if (navigation?.open && !desktop.matches && !navigation.contains(event.target)) navigation.open = false;
   });
   document.addEventListener("keydown", (event) => {
     if (window.LobbyUI.modalKeydown(event) || event.key !== "Escape") return;
     if (profile?.open) {
-      profile.open = false;
+      setProfile(false);
       profile.querySelector("summary").focus();
     } else if (navigation?.open && !desktop.matches) {
       navigation.open = false;
@@ -129,6 +163,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.addEventListener("invalid", event => {
     const field = event.target;
     if (!field.closest?.(".ui-field") || !field.id) return;
+    event.preventDefault();
     field.setAttribute("aria-invalid", "true");
     let error = document.getElementById(field.id + "-validation");
     if (!error) {
@@ -136,7 +171,7 @@ document.addEventListener("DOMContentLoaded", () => {
       error.id = field.id + "-validation";
       error.className = "ui-field-error";
       error.setAttribute("role", "alert");
-      field.closest(".ui-field").insertAdjacentElement("afterend", error);
+      field.closest(".ui-field").appendChild(error);
       field.dataset.uiDescription = field.getAttribute("aria-describedby") || "";
       field.setAttribute("aria-describedby", (field.dataset.uiDescription + " " + error.id).trim());
     }
