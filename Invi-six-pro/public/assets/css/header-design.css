@@ -1,0 +1,35 @@
+/* Shared header overrides, after legacy styles. */
+body .site-header{background:var(--surface);font-size:14px}
+body .site-header-inner{min-height:72px;gap:28px;align-items:center}
+body .site-logo img{width:148px;height:52px;object-fit:contain}
+body .site-primary-nav{gap:24px}
+body .site-primary-nav>a{font-size:14px;line-height:20px;padding-block:26px}
+body :is(.site-login-button,.site-support-link,.site-menu-toggle,.site-profile-panel>a,.site-profile-panel button){font-size:14px;line-height:20px;min-height:44px}
+body .site-account-nav{gap:20px;align-items:center}
+body .site-account-name{font-size:14px;font-weight:600;max-width:120px}
+body .site-profile-caption{font-size:14px;font-weight:600}
+body .site-profile-panel{background:var(--card)}
+body .site-primary-nav>a:hover{color:var(--foreground)}
+body .site-primary-nav>a[aria-current=page]{color:var(--foreground)}
+body .site-navigation-content{overflow:visible;max-height:none}
+@media(max-width:1279px){
+  body .site-header-inner{min-height:72px;justify-content:space-between;gap:16px}
+  body .site-navigation-content{background:var(--surface);max-height:calc(100dvh - 72px);overflow-y:auto;padding:16px;gap:16px}
+  body .site-primary-nav{gap:10px;grid-template-columns:repeat(2,minmax(0,1fr))}
+  body .site-primary-nav>a{padding:12px;white-space:normal}
+  body .site-account-nav{flex-wrap:wrap;gap:12px}
+  body .site-account-name{display:inline;max-width:160px}
+}
+@media(max-width:639px){
+  body .site-header-inner{padding-inline:16px}
+  body .site-primary-nav{grid-template-columns:minmax(0,1fr)}
+  body .site-account-name{max-width:120px}
+  body .site-profile-panel{position:static;margin-top:12px;width:min(260px,calc(100vw - 32px))}
+}
+@media(min-width:1280px) and (max-width:1535px){
+  body .site-header-inner{gap:20px}
+  body .site-primary-nav{gap:20px}
+  body .site-account-nav{gap:14px}
+  body .site-logo img{width:128px}
+  body .site-account-name{max-width:84px}
+}

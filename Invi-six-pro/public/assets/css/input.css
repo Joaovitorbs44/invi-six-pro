@@ -1,0 +1,70 @@
+
+/*
+ * INVI-SIX PRO
+ * Arquivo principal de estilos.
+ *
+ * O Tailwind CSS 4 identifica as classes utilizadas
+ * nas páginas e gera o CSS necessário.
+ */
+
+/* Importa o Tailwind CSS 4. */
+@import "tailwindcss";
+@import "./style.css";
+@import "./pro-carousel.css";
+@import "./theme.css";
+@import "./stage17.css";
+@import "./stage18.css";
+@import "./stage19.css";
+@import "./stage21.css";
+@import "./forms-responsive.css";
+@import "./header-design.css";
+
+/*
+ * Informa onde estão os arquivos PHP e JavaScript
+ * que utilizam classes do Tailwind.
+ */
+@source "../../../src";
+@source "../js";
+@source "../../../api";
+
+/*
+ * Tokens de design.
+ * Poderemos expandir a paleta posteriormente.
+ */
+@theme {
+  --text-xs: 12px;
+  --text-sm: 13px;
+  --text-base: 14px;
+  --text-lg: 16px;
+  --text-xl: 20px;
+  --text-2xl: 24px;
+  --text-3xl: clamp(24px, 20px + 1vw, 32px);
+  --text-4xl: clamp(24px, 20px + 1vw, 32px);
+  --text-5xl: clamp(24px, 20px + 1vw, 32px);
+  --text-6xl: clamp(24px, 20px + 1vw, 32px);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-background: var(--background);
+  --color-card: var(--card);
+  --color-surface: var(--surface);
+  --color-surface-hover: var(--surface-hover);
+  --color-border: var(--border);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted-foreground);
+  --color-on-primary: var(--on-primary);
+
+  --font-sans: "Geist", Arial, sans-serif;
+}
+
+/*
+ * Configurações globais.
+ */
+@layer base {
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+
+  button {
+    cursor: pointer;
+  }
+}
