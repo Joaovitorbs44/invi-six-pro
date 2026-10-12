@@ -515,14 +515,14 @@ require_once __DIR__ . '/../components/header.php';
 
                 </div>
 
-                <fieldset class="ui-field w-full max-w-xs"><legend><label class="ui-field-label" for="user-search">Buscar usuário</label></legend>
+                <div class="ui-field h-12 w-full max-w-xs"><fieldset class="ui-field-outline"><legend><label class="ui-field-label" for="user-search">Buscar usuário</label></legend>
 <input type="search" id="user-search"
                         placeholder="Buscar usuário..."
                         autocomplete="off"
                         class="h-10 w-full rounded-lg border border-border bg-surface px-4 text-xs text-foreground outline-none transition placeholder:text-muted hover:border-border focus:border-[#FF3D2C] focus:ring-2 focus:ring-[#FF3D2C]/10"
                     >
 
-                </fieldset>
+                </fieldset></div>
 
             </div>
 
@@ -927,7 +927,7 @@ require_once __DIR__ . '/../components/header.php';
 
             <div class="relative mt-2">
 
-                <fieldset class="ui-field"><legend><label class="ui-field-label" for="reset-password-input">Nova senha</label></legend><input
+                <div class="ui-field h-12"><fieldset class="ui-field-outline"><legend><label class="ui-field-label" for="reset-password-input">Nova senha</label></legend><input
                     type="password"
                     name="password"
                     id="reset-password-input"
@@ -936,7 +936,7 @@ require_once __DIR__ . '/../components/header.php';
                     autocomplete="new-password"
                     placeholder="Mínimo de 8 caracteres"
                     class="h-12 w-full rounded-lg border border-border bg-surface px-4 pr-20 text-xs text-foreground outline-none transition placeholder:text-muted hover:border-border focus:border-[#FF3D2C] focus:ring-2 focus:ring-[#FF3D2C]/10"
-                ></fieldset>
+                ></fieldset></div>
 
                 <button
                     type="button"

@@ -5,7 +5,10 @@
   "description": "Plataforma competitiva de Rainbow Six Siege",
   "scripts": {
     "dev": "tailwindcss -i ./public/assets/css/input.css -o ./public/assets/css/tailwind.css --watch",
-    "build": "tailwindcss -i ./public/assets/css/input.css -o ./public/assets/css/tailwind.css --minify && node tests/assets.cjs"
+    "build": "tailwindcss -i ./public/assets/css/input.css -o ./public/assets/css/tailwind.css --minify && node tests/assets.cjs",
+    "lint": "node scripts/verify.cjs lint",
+    "test": "node scripts/verify.cjs test",
+    "verify": "node scripts/verify.cjs"
   },
   "devDependencies": {
     "@tailwindcss/cli": "^4.0.0",

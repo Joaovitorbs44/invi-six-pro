@@ -136,13 +136,13 @@ document.addEventListener("DOMContentLoaded", () => {
       error.id = field.id + "-validation";
       error.className = "ui-field-error";
       error.setAttribute("role", "alert");
-      field.closest(".ui-field").appendChild(error);
+      field.closest(".ui-field").insertAdjacentElement("afterend", error);
       field.dataset.uiDescription = field.getAttribute("aria-describedby") || "";
       field.setAttribute("aria-describedby", (field.dataset.uiDescription + " " + error.id).trim());
     }
     error.textContent = field.validationMessage;
   }, true);
-  document.addEventListener("input", event => {
+  const clearFieldError = event => {
     const field = event.target;
     if (field.dataset?.uiDescription === undefined || !field.validity?.valid) return;
     document.getElementById(field.id + "-validation")?.remove();
@@ -150,5 +150,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (field.dataset.uiDescription) field.setAttribute("aria-describedby", field.dataset.uiDescription);
     else field.removeAttribute("aria-describedby");
     delete field.dataset.uiDescription;
-  });
+  };
+  document.addEventListener("input", clearFieldError);
+  document.addEventListener("change", clearFieldError);
 });

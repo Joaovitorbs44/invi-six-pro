@@ -524,7 +524,7 @@ require_once __DIR__ . '/../components/header.php';
 
                                 
 
-                                <fieldset class="ui-field"><legend><label class="ui-field-label" for="name">Nome</label></legend><input
+                                <div class="ui-field h-12"><fieldset class="ui-field-outline"><legend><label class="ui-field-label" for="name">Nome</label></legend><input
                                     type="text"
                                     id="name" <?php if ($authError): ?>aria-describedby="auth-error"<?php endif; ?>
                                     name="name"
@@ -534,7 +534,7 @@ require_once __DIR__ . '/../components/header.php';
                                     required
                                     maxlength="100"
                                     class="h-12 w-full rounded-lg border border-border bg-surface px-4 text-xs text-foreground outline-none transition placeholder:text-muted hover:border-border focus:border-[#FF3D2C] focus:ring-2 focus:ring-[#FF3D2C]/10"
-                                ></fieldset>
+                                ></fieldset></div>
 
                             </div>
 
@@ -545,7 +545,7 @@ require_once __DIR__ . '/../components/header.php';
 
                                 
 
-                                <fieldset class="ui-field"><legend><label class="ui-field-label" for="r6_nickname">Nick no Rainbow Six Siege</label></legend><input
+                                <div class="ui-field h-12"><fieldset class="ui-field-outline"><legend><label class="ui-field-label" for="r6_nickname">Nick no Rainbow Six Siege</label></legend><input
                                     type="text"
                                     id="r6_nickname" <?php if ($authError): ?>aria-describedby="auth-error"<?php endif; ?>
                                     name="r6_nickname"
@@ -555,7 +555,7 @@ require_once __DIR__ . '/../components/header.php';
                                     required
                                     maxlength="50"
                                     class="h-12 w-full rounded-lg border border-border bg-surface px-4 text-xs text-foreground outline-none transition placeholder:text-muted hover:border-border focus:border-[#FF3D2C] focus:ring-2 focus:ring-[#FF3D2C]/10"
-                                ></fieldset>
+                                ></fieldset></div>
 
                             </div>
 
@@ -608,7 +608,7 @@ require_once __DIR__ . '/../components/header.php';
 
                                 
 
-                                <fieldset class="ui-field"><legend><label class="ui-field-label" for="r6_tracker_url">Link do R6 Tracker</label></legend><input
+                                <div class="ui-field h-12"><fieldset class="ui-field-outline"><legend><label class="ui-field-label" for="r6_tracker_url">Link do R6 Tracker</label></legend><input
                                     type="url"
                                     id="r6_tracker_url" <?php if ($authError): ?>aria-describedby="auth-error"<?php endif; ?>
                                     name="r6_tracker_url"
@@ -618,7 +618,7 @@ require_once __DIR__ . '/../components/header.php';
                                     required
                                     maxlength="500"
                                     class="h-12 w-full rounded-lg border border-border bg-surface px-4 text-xs text-foreground outline-none transition placeholder:text-muted hover:border-border focus:border-[#FF3D2C] focus:ring-2 focus:ring-[#FF3D2C]/10"
-                                ></fieldset>
+                                ></fieldset></div>
 
                                 <p class="mt-2 text-[12px] leading-4 text-muted">
                                     A staff utilizará este perfil para verificar sua conta.
@@ -634,7 +634,7 @@ require_once __DIR__ . '/../components/header.php';
 
                                 <div class="relative">
 
-                                    <fieldset class="ui-field"><legend><label class="ui-field-label" for="r6_rank">Rank atual</label></legend><select
+                                    <div class="ui-field h-12"><fieldset class="ui-field-outline"><legend><label class="ui-field-label" for="r6_rank">Rank atual</label></legend><select
                                         id="r6_rank" <?php if ($authError): ?>aria-describedby="auth-error"<?php endif; ?>
                                         name="r6_rank"
                                         required
@@ -660,7 +660,7 @@ require_once __DIR__ . '/../components/header.php';
 
                                         <?php } ?>
 
-                                    </select></fieldset>
+                                    </select></fieldset></div>
 
                                     <?= faIcon('chevron-down', 'auth-select-icon') ?>
 

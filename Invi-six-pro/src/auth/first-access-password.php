@@ -43,17 +43,17 @@ require_once __DIR__ . '/../components/header.php';
         <p class="mt-2 text-xs leading-5 text-muted">Após a aprovação da staff, informe seu nick R6, o código de ativação e uma nova senha.</p>
         <form action="/primeiro-acesso/senha" method="POST" class="mt-8">
             <?= csrfField() ?>
-            <fieldset class="ui-field"><legend><label class="ui-field-label" for="r6_nickname">Nick R6</label></legend><input id="r6_nickname" name="r6_nickname" type="text" autocomplete="username" required minlength="2" maxlength="50" value="<?= e($request['r6_nickname'] ?? '') ?>"
-                class="h-12 w-full rounded-lg border border-border bg-surface px-4 text-xs text-foreground outline-none focus:border-[#FF3D2C] focus:ring-2 focus:ring-[#FF3D2C]/10"></fieldset>
-            <fieldset class="ui-field"><legend><label class="ui-field-label" for="activation_code">Código de ativação</label></legend><input id="activation_code" name="activation_code" type="text" autocomplete="off" required minlength="64" maxlength="64" pattern="[a-f0-9]{64}" spellcheck="false"
-                class="h-12 w-full rounded-lg border border-border bg-surface px-4 text-xs text-foreground outline-none focus:border-[#FF3D2C] focus:ring-2 focus:ring-[#FF3D2C]/10"></fieldset>
+            <div class="ui-field h-12"><fieldset class="ui-field-outline"><legend><label class="ui-field-label" for="r6_nickname">Nick R6</label></legend><input id="r6_nickname" name="r6_nickname" type="text" autocomplete="username" required minlength="2" maxlength="50" value="<?= e($request['r6_nickname'] ?? '') ?>"
+                class="h-12 w-full rounded-lg border border-border bg-surface px-4 text-xs text-foreground outline-none focus:border-[#FF3D2C] focus:ring-2 focus:ring-[#FF3D2C]/10"></fieldset></div>
+            <div class="ui-field h-12"><fieldset class="ui-field-outline"><legend><label class="ui-field-label" for="activation_code">Código de ativação</label></legend><input id="activation_code" name="activation_code" type="text" autocomplete="off" required minlength="64" maxlength="64" pattern="[a-f0-9]{64}" spellcheck="false"
+                class="h-12 w-full rounded-lg border border-border bg-surface px-4 text-xs text-foreground outline-none focus:border-[#FF3D2C] focus:ring-2 focus:ring-[#FF3D2C]/10"></fieldset></div>
             
-            <fieldset class="ui-field"><legend><label class="ui-field-label" for="password">Nova senha</label></legend><input id="password" name="password" type="password" autocomplete="new-password" required minlength="8"
-                class="h-12 w-full rounded-lg border border-border bg-surface px-4 text-xs text-foreground outline-none focus:border-[#FF3D2C] focus:ring-2 focus:ring-[#FF3D2C]/10"></fieldset>
+            <div class="ui-field h-12"><fieldset class="ui-field-outline"><legend><label class="ui-field-label" for="password">Nova senha</label></legend><input id="password" name="password" type="password" autocomplete="new-password" required minlength="8"
+                class="h-12 w-full rounded-lg border border-border bg-surface px-4 text-xs text-foreground outline-none focus:border-[#FF3D2C] focus:ring-2 focus:ring-[#FF3D2C]/10"></fieldset></div>
             <p class="mt-2 text-[12px] text-muted">Mínimo de 8 caracteres e máximo de 72 bytes (acentos podem ocupar mais de um byte).</p>
             
-            <fieldset class="ui-field"><legend><label class="ui-field-label" for="password_confirmation">Confirmar senha</label></legend><input id="password_confirmation" name="password_confirmation" type="password" autocomplete="new-password" required minlength="8"
-                class="h-12 w-full rounded-lg border border-border bg-surface px-4 text-xs text-foreground outline-none focus:border-[#FF3D2C] focus:ring-2 focus:ring-[#FF3D2C]/10"></fieldset>
+            <div class="ui-field h-12"><fieldset class="ui-field-outline"><legend><label class="ui-field-label" for="password_confirmation">Confirmar senha</label></legend><input id="password_confirmation" name="password_confirmation" type="password" autocomplete="new-password" required minlength="8"
+                class="h-12 w-full rounded-lg border border-border bg-surface px-4 text-xs text-foreground outline-none focus:border-[#FF3D2C] focus:ring-2 focus:ring-[#FF3D2C]/10"></fieldset></div>
             <button type="submit" class="mt-6 flex h-12 w-full items-center justify-center rounded-[4px] bg-[#FF3D2C] text-xs font-medium text-on-primary hover:bg-[#E93425]">Criar minha senha</button>
         </form>
     </div>
