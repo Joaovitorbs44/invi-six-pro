@@ -14,6 +14,7 @@ $proTeams = [
 ];
 ?>
 <section class="pro-section" aria-labelledby="pro-title" data-pro-carousel>
+  <div class="site-container">
   <div class="pro-heading"><div><p class="pro-eyebrow">Mentalidade competitiva</p><h2 id="pro-title">JOGUE COM OS <span>PROS</span></h2><p>Inspire-se nas equipes profissionais e dispute cada partida com mentalidade competitiva.</p></div>
     <button type="button" class="pro-motion-button" data-pro-toggle aria-controls="pro-viewport" aria-pressed="false" hidden><span data-pro-pause><?= faIcon('pause') ?></span><span data-pro-play hidden><?= faIcon('play') ?></span><span data-pro-label>Pausar movimento</span></button>
   </div>
@@ -26,5 +27,6 @@ $proTeams = [
     </ul></div>
   </div>
   <p class="pro-disclaimer">Equipes apresentadas como referência competitiva, sem vínculo ou parceria com o INVI-SIX PRO.</p>
+  </div>
 </section>
 <script src="<?= e(assetUrl('/assets/js/pro-carousel.js')) ?>" defer></script>

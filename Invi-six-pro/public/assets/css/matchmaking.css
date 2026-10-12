@@ -1,6 +1,6 @@
 /* Queue-first competitive lobby; all sizes are intrinsic and cards use real state. */
-.mm-page{min-height:calc(100vh - 76px);background:var(--surface);color:var(--foreground);padding:40px var(--ui-section-padding,24px) 32px}
-main .mm-page .mm-shell{max-width:none;margin:auto}
+.mm-page{min-height:calc(100vh - 76px);background:var(--surface);color:var(--foreground);padding-block:40px 32px}
+
 .mm-page svg{width:16px;height:16px;flex-shrink:0}
 .mm-heading{display:flex;justify-content:space-between;align-items:center;gap:24px;margin-bottom:32px}
 .mm-eyebrow{color:var(--muted-foreground);font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase}

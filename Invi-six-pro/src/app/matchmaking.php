@@ -34,7 +34,7 @@ try {
         http_response_code(503);
         flash('error', 'Não foi possível carregar o matchmaking. Tente novamente.');
         require_once __DIR__ . '/../components/header.php';
-        echo '<section class="mx-auto max-w-7xl px-6 py-12"><h1>Matchmaking indisponível</h1><p>Tente novamente em alguns instantes.</p></section>';
+        echo '<section class="site-container py-12"><h1>Matchmaking indisponível</h1><p>Tente novamente em alguns instantes.</p></section>';
         require_once __DIR__ . '/../components/footer.php';
         exit;
     }
@@ -89,8 +89,8 @@ require_once __DIR__ . '/../components/header.php';
 <link rel="stylesheet" href="<?= e(assetUrl('/assets/css/competitive.css')) ?>">
 
 <link rel="stylesheet" href="<?= e(assetUrl('/assets/css/stage16.css')) ?>">
-<section class="mm-page stage16 px-5 sm:px-8 lg:px-16 xl:px-32 2xl:px-80" id="matchmaking" data-queue-state="<?= e($viewState) ?>" aria-labelledby="mm-title">
-<div class="mm-shell">
+<section class="mm-page stage16" id="matchmaking" data-queue-state="<?= e($viewState) ?>" aria-labelledby="mm-title">
+<div class="site-container mm-shell">
 <header class="intro16"><div><p class="intro16-badge"><?= faIcon('crosshairs') ?> COMPETITIVO 5V5</p><h1 id="mm-title">Sua próxima partida<br><span>começa aqui.</span></h1><p class="intro16-description">Um lobby completo. Duas equipes. Sua próxima disputa no Rainbow Six Siege.</p></div>
 <div class="intro16-meta"><span id="mm-season-state" class="mm-tag"><?= $season?'Temporada ativa':'Sem temporada ativa' ?></span><p><strong id="mm-header-count"><?= $queueCount ?></strong> participantes no lobby</p><a href="/perfil">Histórico de partidas <?= faIcon('arrow-up-right-from-square') ?></a></div></header>
 <div class="mm-layout lobby16-layout">

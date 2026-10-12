@@ -76,9 +76,9 @@ require_once __DIR__ . '/../components/head.php';
   </div>
 
   <!-- Conteúdo principal -->
-  <div class="hero18-content relative z-10 mx-auto flex min-h-[680px] w-full max-w-[1920px] flex-col justify-center px-6 py-24 sm:px-10 lg:min-h-[740px] lg:px-20 xl:px-40 2xl:px-80">
+  <div class="site-container hero18-content relative z-10 flex min-h-[680px] flex-col justify-center py-24 lg:min-h-[740px]">
 
-    <div class="flex w-full max-w-[570px] flex-col items-start">
+    <div class="hero18-copy flex w-full flex-col items-start">
 
       <!-- Identificação -->
       <div class="mb-7 inline-flex items-center gap-2.5 rounded-lg border border-border bg-surface/80 px-3.5 py-2 backdrop-blur-sm">
@@ -228,7 +228,8 @@ require_once __DIR__ . '/../components/head.php';
 </section>
 
   <!-- Como funciona -->
-  <section id="como-funciona" class="landing-section flex w-full bg-surface">
+  <section id="como-funciona" class="landing-section w-full bg-surface">
+  <div class="site-container landing-steps">
 
     <?php
 
@@ -257,7 +258,7 @@ require_once __DIR__ . '/../components/head.php';
 
     <?php foreach ($steps as $step): ?>
 
-      <article class="<?= $step['class'] ?> w-full bg-surface py-10 md:px-10">
+      <article class="<?= $step['class'] ?> landing-step w-full bg-surface py-10">
 
         <span class="text-xs font-medium text-[#FF3D2C]">
           <?= htmlspecialchars($step['number']) ?>
@@ -275,10 +276,13 @@ require_once __DIR__ . '/../components/head.php';
 
     <?php endforeach; ?>
 
-  </section>
+  
+  </div>
+</section>
 
 <!-- Ranking -->
 <section id="tabela" class="landing-section w-full py-20 border-t border-border bg-surface">
+  <div class="site-container">
 
     <div class="flex items-end justify-between gap-4">
 
@@ -427,6 +431,8 @@ require_once __DIR__ . '/../components/head.php';
 
   </div>
 
+
+  </div>
 </section>
 
 
@@ -484,7 +490,7 @@ require_once __DIR__ . '/../components/head.php';
 
   <!-- Conteúdo -->
   <div
-    class="relative z-10 mx-auto w-full max-w-[1920px] px-6 sm:px-10 lg:px-20 xl:px-40 2xl:px-80"
+    class="site-container relative z-10"
   >
 
     <div
@@ -675,6 +681,7 @@ require_once __DIR__ . '/../components/head.php';
 
 <!-- Acesso -->
 <section class="landing-section w-full py-20 bg-surface">
+  <div class="site-container">
 
   <div class="w-full">
 
@@ -794,6 +801,8 @@ require_once __DIR__ . '/../components/head.php';
 
   </div>
 
+
+  </div>
 </section>
 
 

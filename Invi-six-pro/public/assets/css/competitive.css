@@ -1,4 +1,4 @@
-.cx-shell{max-width:1180px;margin:0 auto;padding:40px 24px;color:var(--foreground);font-family:Geist,system-ui,sans-serif;font-size:13px}
+.cx-shell{padding-block:40px;color:var(--foreground);font-family:Geist,system-ui,sans-serif;font-size:13px}
 .cx-shell [hidden]{display:none!important}
 .cx-heading{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:28px}
 .cx-heading h1{font-size:24px;font-weight:600;letter-spacing:-.04em}
@@ -58,7 +58,7 @@
 .cx-alert{border-color:var(--border);background:var(--primary-surface)}
 .cx-section{margin:24px 0}
 .cx-section>h2{font-weight:600;margin-bottom:12px}
-@media(max-width:800px){.cx-shell{padding:24px 16px}
+@media(max-width:800px){.cx-shell{padding-block:24px}
 .cx-support{grid-template-columns:1fr}
 .cx-conversation{display:none}
 .cx-conversation-open .cx-ticket-list{display:none}
@@ -108,7 +108,7 @@
 .cx-player form{flex-basis:100%}
 }
 /* Shared visual language for ranking, support, punishments and seasons. */
-.cx-workspace{max-width:1180px;padding:48px 24px 56px;color:var(--foreground);background:var(--surface);font-size:13px}
+.cx-workspace{padding-block:48px 56px;color:var(--foreground);background:var(--surface);font-size:13px}
 .cx-workspace h1{font-size:32px;line-height:1.2;font-weight:600;letter-spacing:-.045em;margin:0 0 8px}
 .cx-workspace h2{font-size:20px;line-height:1.4;font-weight:600;letter-spacing:-.02em}
 .cx-workspace h3{font-size:14px;font-weight:600;line-height:1.5}
@@ -264,7 +264,7 @@
 .cx-ranking-points{grid-column:4;grid-row:1 / 3}
 .cx-punishment-layout{grid-template-columns:320px minmax(0,1fr);gap:20px}
 }
-@media(max-width:800px){.cx-workspace{padding:32px 20px}
+@media(max-width:800px){.cx-workspace{padding-block:32px}
 .cx-workspace .cx-heading{align-items:flex-start}
 .cx-workspace h1{font-size:24px}
 .cx-workspace .cx-support{grid-template-columns:1fr;height:min(76vh,720px);min-height:480px}
@@ -282,7 +282,7 @@
 .cx-season-row>span{font-size:12px}
 .cx-workspace .cx-summary>div{padding:0 20px}
 }
-@media(max-width:520px){.cx-workspace{padding:28px 16px 40px}
+@media(max-width:520px){.cx-workspace{padding-block:28px 40px}
 .cx-workspace .cx-heading{margin-bottom:22px;gap:14px}
 .cx-workspace h1{font-size:24px}
 .cx-workspace .cx-card{padding:20px}

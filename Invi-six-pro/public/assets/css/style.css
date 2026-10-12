@@ -146,14 +146,14 @@ a {
 }
 
 /* Shared interface. Competitive state and page-specific grids stay independent. */
-:root{--ui-bg:var(--surface);--ui-surface:var(--secondary-background);--ui-text:var(--foreground);--ui-muted:var(--muted-foreground);--ui-border:var(--border);--ui-primary:var(--primary);--ui-hover:var(--primary-hover);--ui-radius:12px;--ui-container:1180px}
+:root{--ui-bg:var(--surface);--ui-surface:var(--secondary-background);--ui-text:var(--foreground);--ui-muted:var(--muted-foreground);--ui-border:var(--border);--ui-primary:var(--primary);--ui-hover:var(--primary-hover);--ui-radius:12px;--ui-container:1280px}
 [hidden]{display:none!important}
 a,button,input,select,textarea,summary{transition:color .18s ease,background-color .18s ease,border-color .18s ease,box-shadow .18s ease}
 :where(a,button,summary):focus-visible{outline:2px solid var(--ui-primary);outline-offset:4px}
 .skip-link{position:fixed;top:12px;left:16px;z-index:10000;padding:12px 18px;background:var(--surface);border:1px solid var(--ui-border);border-radius:8px;transform:translateY(-160%)}
 .skip-link:focus{transform:none}
 .site-header{position:relative;z-index:40;border-bottom:1px solid var(--ui-border);background:var(--ui-bg);font-size:12px;color:var(--ui-text)}
-.site-header-inner{max-width:var(--ui-container);min-height:76px;margin:auto;padding:0 24px;display:flex;align-items:center;gap:32px}
+.site-header-inner{min-height:76px;margin:auto;display:flex;align-items:center;gap:32px}
 .site-logo{display:inline-flex;align-items:center;gap:10px;flex-shrink:0;font-size:16px;font-weight:600;letter-spacing:-.04em}
 .site-logo strong{font-weight:500;color:var(--ui-muted)}
 .site-logo-mark{display:grid;place-items:center;width:32px;height:32px;border-radius:8px;background:var(--ui-primary);color:var(--on-primary);font-size:13px;letter-spacing:-.08em;font-weight:700}
@@ -176,14 +176,14 @@ a,button,input,select,textarea,summary{transition:color .18s ease,background-col
 .site-profile-panel form{border-top:1px solid var(--ui-border);margin-top:6px;padding-top:6px}.site-profile-panel button{background:transparent;border:0;color:var(--ui-primary);cursor:pointer}
 .site-login-button{display:inline-flex;align-items:center;gap:12px;background:var(--ui-primary);color:var(--on-primary);padding:11px 18px;border-radius:8px;font-weight:500;white-space:nowrap}.site-login-button:hover{background:var(--ui-hover)}
 .site-footer{font-family:Geist,system-ui,sans-serif;color:var(--ui-muted);font-size:12px}
-.site-footer-main{max-width:var(--ui-container);margin:auto;padding:40px 24px;display:grid;grid-template-columns:minmax(0,2fr) 1fr 1fr;gap:48px}
+.site-footer-main{margin:auto;padding-block:40px;display:grid;grid-template-columns:minmax(0,2fr) 1fr 1fr;gap:48px}
 .site-footer-main>div>p{max-width:320px;margin-top:12px;font-size:12px;line-height:1.8}
 .site-footer-brand{display:flex;align-items:center;gap:10px;color:var(--ui-text);font-weight:600;font-size:14px}.site-footer-brand span{width:6px;height:6px;border-radius:50%;background:var(--ui-primary)}
 .site-footer nav{display:flex;flex-direction:column;align-items:flex-start;gap:10px}.site-footer h2{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px}.site-footer a:hover{color:var(--ui-text)}
-.site-footer-bottom{max-width:var(--ui-container);margin:auto;display:flex;justify-content:space-between;gap:16px;padding:18px 24px;border-top:1px solid var(--ui-border);font-size:12px;line-height:1.8}
-.landing-section{padding-left:var(--ui-section-padding);padding-right:var(--ui-section-padding)}
-main :is(.cx-shell,.mm-shell){max-width:var(--ui-container);color:var(--ui-text)}
-main .cx-shell{padding:40px 24px}main .cx-heading{margin-bottom:28px;gap:24px}main .cx-heading h1{font-size:clamp(24px,20px + 1vw,32px);line-height:1.15;letter-spacing:-.045em;font-weight:600}
+.site-footer-bottom{margin:auto;display:flex;justify-content:space-between;gap:16px;padding-block:18px;border-top:1px solid var(--ui-border);font-size:12px;line-height:1.8}
+
+main :is(.cx-shell,.mm-shell){color:var(--ui-text)}
+main .cx-shell{padding-block:40px}main .cx-heading{margin-bottom:28px;gap:24px}main .cx-heading h1{font-size:clamp(24px,20px + 1vw,32px);line-height:1.15;letter-spacing:-.045em;font-weight:600}
 
 main :is(.cx-button,.cx-primary,.mm-button){border-radius:8px;min-height:44px;transition:background-color .18s,border-color .18s,box-shadow .18s}
 main .cx-primary{background:var(--ui-primary);border-color:var(--ui-primary);color:var(--on-primary)}main .cx-primary:hover{background:var(--ui-hover);border-color:var(--ui-hover)}
@@ -195,7 +195,7 @@ main .cx-confirm-dialog{border:1px solid var(--ui-border);border-radius:16px;box
 #toast-container [data-toast]{border-radius:12px;border-color:var(--ui-border);box-shadow:0 4px 20px #11111108;opacity:1;transform:none;transition:opacity .16s,transform .16s}
 @media(min-width:1280px){.site-navigation:not([open])>.site-navigation-content{display:flex!important}}
 @media(max-width:1279px){.site-header-inner{min-height:68px;justify-content:space-between;gap:16px}.site-navigation{flex:0 0 auto}.site-menu-toggle{display:flex;align-items:center;gap:8px;padding:10px 12px;border:1px solid var(--ui-border);border-radius:8px;cursor:pointer;color:var(--ui-muted)}.site-navigation-content{position:absolute;left:0;right:0;top:100%;padding:16px 24px 24px;background:var(--surface);border-bottom:1px solid var(--ui-border);box-shadow:0 8px 20px #11111105;align-items:stretch;flex-direction:column;gap:18px}.site-navigation:not([open])>.site-navigation-content{display:none!important}.site-primary-nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.site-primary-nav>a{padding:12px;border-radius:8px;background:var(--ui-surface)}.site-primary-nav>a[aria-current=page]:after{display:none}.site-primary-nav>a[aria-current=page]{color:var(--ui-primary)}.site-account-nav{margin:0;justify-content:space-between}.site-profile-panel{max-width:calc(100vw - 48px)}}
-@media(max-width:640px){.site-header-inner{padding:0 16px}.site-navigation-content{padding:16px}.site-account-name{max-width:120px}.site-footer-main{padding:32px 16px;gap:28px;grid-template-columns:1fr 1fr}.site-footer-main>div{grid-column:1/-1}.site-footer-bottom{padding:16px;flex-direction:column;gap:4px}main .cx-shell{padding:28px 16px}main .cx-heading{gap:16px}main .cx-reply{flex-wrap:wrap}}
+@media(max-width:640px){.site-navigation-content{padding:16px}.site-account-name{max-width:120px}.site-footer-main{padding-block:32px;gap:28px;grid-template-columns:1fr 1fr}.site-footer-main>div{grid-column:1/-1}.site-footer-bottom{padding-block:16px;flex-direction:column;gap:4px}main .cx-shell{padding-block:28px}main .cx-heading{gap:16px}main .cx-reply{flex-wrap:wrap}}
 @media(prefers-reduced-motion:reduce){a,button,input,select,textarea,summary{transition:none}}
 
 main form button{border-radius:8px}
@@ -204,17 +204,7 @@ main .arena-loading{border:1px solid var(--ui-border);background:var(--ui-surfac
 main .arena-refresh-error{background:var(--primary-surface);border:1px solid var(--border);border-radius:10px;padding:14px;color:#9f241c;font-size:12px}main .mm-search-state{border-bottom:1px solid var(--ui-border)}
 @media(max-width:640px){}
 
-/* Match the protected landing's responsive spacing without padding inner cards twice. */
-:root{--ui-section-padding:20px}
-.site-header-inner{max-width:none;padding-left:var(--ui-section-padding);padding-right:var(--ui-section-padding)}
-.site-footer-main,.site-footer-bottom{max-width:none;padding-left:var(--ui-section-padding);padding-right:var(--ui-section-padding)}
-main>.cx-shell{max-width:none;padding-left:var(--ui-section-padding);padding-right:var(--ui-section-padding)}
-main>section:not(#invitational):not(:has(.hero-r6-image)){padding-left:var(--ui-section-padding);padding-right:var(--ui-section-padding)}
-@media(min-width:640px){:root{--ui-section-padding:32px}}
-@media(min-width:1024px){:root{--ui-section-padding:64px}}
-@media(min-width:1280px){:root{--ui-section-padding:128px}}
-@media(min-width:1536px){:root{--ui-section-padding:320px}}
-
+/* Horizontal layout is owned by site-container in layout.css. */
 /* Content is visible by default; page motion is a progressive JS enhancement. */
 #main-content{opacity:1}
 .site-header,#main-content{font-family:Geist,system-ui,sans-serif}
@@ -222,7 +212,7 @@ svg.fa-icon{display:inline-block;vertical-align:middle;width:var(--fa-size,16px)
 .fa-sm{--fa-size:14px}.fa-lg{--fa-size:20px}
 .testing-banner{padding:6px 20px;text-align:center;background:var(--secondary-background);border-bottom:1px solid var(--border);color:var(--muted-foreground);font-size:12px;font-family:Geist,system-ui,sans-serif}
 /* Community identity shares the outer gutter; its cards never add another gutter. */
-.community-shell{padding:28px var(--ui-section-padding) 0;font-family:Geist,system-ui,sans-serif;color:var(--foreground);min-width:0}
+.community-shell{padding-block:28px 0;font-family:Geist,system-ui,sans-serif;color:var(--foreground);min-width:0}
 .community-heading{display:flex;align-items:center;gap:20px;padding:24px;background:var(--secondary-background);border:1px solid var(--border);border-radius:12px;min-width:0}
 .community-logo{width:64px;height:64px;object-fit:contain;flex-shrink:0}
 .community-copy{min-width:0;flex:1}.community-eyebrow{font-size:12px;color:var(--muted-foreground);letter-spacing:.08em;text-transform:uppercase}

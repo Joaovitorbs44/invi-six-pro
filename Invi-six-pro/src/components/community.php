@@ -8,7 +8,7 @@ $communityLinks = [];
 if (!$headerLoggedIn || $headerRole !== 'staff') $communityLinks['/matchmaking'] = 'Matchmaking';
 $communityLinks['/ranking'] = 'Ranking';
 ?>
-<div class="community-shell">
+<div class="community-shell site-container">
   <section class="community-heading" aria-labelledby="community-name">
     <img class="community-logo" src="/assets/images/logo-invisix.svg" alt="" decoding="async">
     <div class="community-copy"><p class="community-eyebrow">Comunidade competitiva · Rainbow Six Siege</p><h2 id="community-name">INVI SIX PRO</h2><p>Seu espaço para competir, evoluir e encontrar o próximo lobby.</p></div>

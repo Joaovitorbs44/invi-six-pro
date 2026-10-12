@@ -109,7 +109,7 @@ require_once __DIR__ . '/../components/header.php';
 
 <section class="admin17 min-h-[calc(100vh-64px)] bg-surface">
 
-    <div class="mx-auto max-w-7xl px-6 py-12">
+    <div class="site-container admin-content py-12">
 
         <!-- Cabeçalho -->
 

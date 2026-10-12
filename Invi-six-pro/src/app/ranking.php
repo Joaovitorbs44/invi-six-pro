@@ -19,7 +19,7 @@ require __DIR__.'/../components/header.php';
 ?>
 <link rel="stylesheet" href="<?= e(assetUrl('/assets/css/competitive.css')) ?>">
 <link rel="stylesheet" href="<?= e(assetUrl('/assets/css/standings.css')) ?>">
-<section class="cx-shell cx-workspace standings" aria-labelledby="ranking-title">
+<section class="site-container cx-shell cx-workspace standings" aria-labelledby="ranking-title">
     <div class="cx-heading">
         <div><p class="cx-eyebrow">Lobby R6 / Ranking competitivo</p><h1 id="ranking-title">CLASSIFICAÇÃO</h1><p><?= $historical?'Classificação final preservada':'Temporada atual · 30 dias · Pontos iniciais: 0' ?></p></div>
         <div class="standings-season"><strong><?= e($season['name']??'Sem temporada ativa') ?></strong><?php if($season): ?><span class="status18 status18-<?= ($season['status']??'active')==='finished'?'neutral':'success' ?>"><?= ($season['status']??'active')==='finished'?'Classificação final':'Ativa' ?></span><?php endif; ?></div>

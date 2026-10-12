@@ -24,7 +24,7 @@ $pageTitle='Suporte · Lobby R6';
 require __DIR__.'/../components/header.php';
 ?>
 <link rel="stylesheet" href="<?= e(assetUrl('/assets/css/competitive.css')) ?>">
-<section class="cx-shell cx-workspace" data-support data-staff="<?= $staffView?'1':'0' ?>" data-ticket="<?= $selected ?>">
+<section class="site-container cx-shell cx-workspace" data-support data-staff="<?= $staffView?'1':'0' ?>" data-ticket="<?= $selected ?>">
  <div class="cx-heading"><div><p class="cx-eyebrow">Central de atendimento</p><h1>Suporte</h1><p>Converse com nossa staff sobre partidas, acesso e problemas na plataforma.</p></div><button type="button" class="cx-primary" data-open-support><span aria-hidden="true">+</span> Nova conversa</button><noscript><style>[data-open-support]{display:none!important}</style><a class="cx-button" href="<?= e($base) ?>?new=1">Nova conversa</a></noscript></div>
  <?php if($staffView): ?><nav class="cx-actions" aria-label="Áreas da staff"><a class="cx-link" href="/admin/matches">Partidas e disputas</a><a class="cx-link" href="/admin/punishments">Punições</a><?php if(isAdmin()): ?><a class="cx-link" href="/admin/seasons">Temporadas</a><?php endif; ?></nav><?php endif; ?>
  <nav class="cx-support-tabs" aria-label="Assuntos do atendimento"><a href="<?= e($base) ?>" <?= empty($filters['category'])?'aria-current="page"':'' ?>>Todas as conversas</a><?php foreach(['match'=>'Partidas e disputas','ban'=>'Punições','ranking'=>'Temporadas e pontos'] as $key=>$label): ?><a href="<?= e($base.'?'.http_build_query(array_merge($filters,['category'=>$key]))) ?>" <?= ($filters['category']??'')===$key?'aria-current="page"':'' ?>><?= e($label) ?></a><?php endforeach; ?></nav>

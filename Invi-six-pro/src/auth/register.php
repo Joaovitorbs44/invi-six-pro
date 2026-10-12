@@ -348,7 +348,7 @@ require_once __DIR__ . '/../components/header.php';
 
     
 
-    <div class="auth-layout auth-flex flex min-h-[calc(100vh-80px)] w-full flex-col justify-center gap-16 px-5 py-12 sm:px-8 lg:flex-row lg:items-center lg:px-16 xl:px-32 2xl:px-80">
+    <div class="site-container auth-layout auth-flex">
 
         
 

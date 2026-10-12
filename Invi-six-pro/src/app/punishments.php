@@ -8,7 +8,7 @@ $labels=['warning'=>'Advertência','suspension'=>'Suspensão','ban'=>'Banimento'
 $staffView=false;
 ?>
 <link rel="stylesheet" href="<?= e(assetUrl('/assets/css/competitive.css')) ?>">
-<section class="cx-shell cx-workspace" aria-labelledby="punishments-title">
+<section class="site-container cx-shell cx-workspace" aria-labelledby="punishments-title">
     <div class="cx-heading"><div><p class="cx-eyebrow">Minha conta</p><h1 id="punishments-title">Punições</h1><p>Consulte as decisões da staff e o prazo de cada registro.</p></div><a class="cx-button" href="/support">Falar com o suporte <?= faIcon('arrow-right') ?></a></div>
     <?php if(competitiveRestriction($pdo,(int)userId())): ?><p class="cx-alert">Sua conta possui uma restrição competitiva ativa. A entrada na fila está bloqueada.</p><?php endif; ?>
     <div class="cx-list"><?php foreach($rows as $row): require __DIR__.'/../components/punishment-card.php'; endforeach; ?>

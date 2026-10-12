@@ -12,7 +12,7 @@ require __DIR__.'/../components/header.php';
 <link rel="stylesheet" href="<?= e(assetUrl('/assets/css/competitive.css')) ?>">
 <link rel="stylesheet" href="<?= e(assetUrl('/assets/css/arena.css')) ?>">
 <link rel="stylesheet" href="<?= e(assetUrl('/assets/css/stage16.css')) ?>">
-<section class="cx-shell arena-shell match19-page"><a class="cx-link" href="<?= e($historyDestination) ?>"><?= faIcon('arrow-left') ?> Voltar para partidas</a>
+<section class="site-container cx-shell arena-shell match19-page"><a class="cx-link" href="<?= e($historyDestination) ?>"><?= faIcon('arrow-left') ?> Voltar para partidas</a>
 <div data-match-board data-match-id="<?= (int)$matchData['match']['id'] ?>" data-version="<?= (int)$matchData['match']['version'] ?>"><?php require __DIR__.'/../components/match-board.php'; ?></div></section>
 <script src="<?= e(assetUrl('/assets/js/match.js')) ?>" defer></script>
 <?php require __DIR__.'/../components/footer.php';

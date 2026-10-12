@@ -68,7 +68,7 @@ require_once __DIR__ . '/icons.php';
   ?>
   <a class="skip-link" href="#main-content">Pular para o conteúdo</a>
   <header class="site-header">
-    <div class="site-header-inner">
+    <div class="site-header-inner site-container">
       <a href="/" class="site-logo" aria-label="InviSix Pro — início">
         <img src="/assets/images/logo-invisix.svg" class="w-full h-16 object-contain" alt="INVI SIX PRO" decoding="async" />
       </a>

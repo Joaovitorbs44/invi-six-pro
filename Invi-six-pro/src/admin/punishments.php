@@ -8,7 +8,7 @@ $users=$usersPdo->query("SELECT id,r6_nickname FROM users WHERE role='player' OR
 $staffView=true;
 ?>
 <link rel="stylesheet" href="<?= e(assetUrl('/assets/css/competitive.css')) ?>">
-<section class="cx-shell cx-workspace" aria-labelledby="punishments-title">
+<section class="site-container cx-shell cx-workspace" aria-labelledby="punishments-title">
     <div class="cx-heading"><div><p class="cx-eyebrow">Administração</p><h1 id="punishments-title">Punições</h1><p>Proteja a competição. Registre decisões e acompanhe os prazos.</p></div><a class="cx-button" href="/admin/support">Central de atendimento <?= faIcon('arrow-right') ?></a></div>
     <div class="cx-punishment-layout">
         <section class="cx-card cx-punishment-form"><div class="cx-section-heading"><span class="cx-caption">Moderação</span><h2>Aplicar punição</h2><p class="cx-muted">O motivo será exibido ao jogador.</p></div>

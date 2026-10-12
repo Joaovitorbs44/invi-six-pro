@@ -22,7 +22,7 @@ $historyReturn='/partidas?status='.rawurlencode($status).'&page='.$page;
 $pageTitle='Minhas partidas · INVI SIX PRO';require __DIR__.'/../components/header.php';
 ?>
 <link rel="stylesheet" href="<?= e(assetUrl('/assets/css/competitive.css')) ?>">
-<section class="cx-shell history18" data-live-competitive>
+<section class="site-container cx-shell history18" data-live-competitive>
 <div class="cx-heading"><div><p class="cx-eyebrow">Competitivo</p><h1>Histórico de partidas</h1><p>Resultados e detalhes das partidas disponíveis para sua conta.</p></div><span><?= $total ?> partidas</span></div>
 <form method="get" class="history18-filter"><div class="ui-field"><label for="history-status" class="ui-field-label">Status da partida</label><select id="history-status" name="status"><option value="">Todos os status</option><?php foreach($labels as $key=>$label): ?><option value="<?= e($key) ?>" <?= $status===$key?'selected':'' ?>><?= e($label) ?></option><?php endforeach; ?></select></div><button class="cx-button">Filtrar</button><a href="/partidas">Limpar filtros</a></form>
 <?php require __DIR__.'/../components/match-history-list.php'; ?>

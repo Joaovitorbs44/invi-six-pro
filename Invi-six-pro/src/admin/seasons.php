@@ -20,7 +20,7 @@ $history=array_filter($seasons,static fn($s)=>$s['status']==='finished');
 $pageTitle='Temporadas · INVI SIX PRO';require __DIR__.'/../components/header.php';
 ?>
 <link rel="stylesheet" href="<?= e(assetUrl('/assets/css/competitive.css')) ?>">
-<section class="cx-shell cx-workspace"><div class="cx-heading"><div><p class="cx-eyebrow">Administração</p><h1>Temporadas</h1><p>Ciclos de 30 dias e classificação final preservada.</p></div><a class="cx-button" href="/ranking">Ver ranking <?= faIcon('arrow-right') ?></a></div>
+<section class="site-container cx-shell cx-workspace"><div class="cx-heading"><div><p class="cx-eyebrow">Administração</p><h1>Temporadas</h1><p>Ciclos de 30 dias e classificação final preservada.</p></div><a class="cx-button" href="/ranking">Ver ranking <?= faIcon('arrow-right') ?></a></div>
 <?php if($current):$metrics=seasonMetrics($pdo,(int)$current['id'],true);$expired=$current['ends_at']<=gmdate('Y-m-d H:i:s'); ?>
 <article class="cx-card cx-section cx-season-current"><div class="cx-heading"><div><p class="cx-eyebrow">Temporada atual</p><h2><?= e($current['name']) ?></h2></div><span class="status18 status18-<?= $expired?'warning':'success' ?>"><?= $expired?'Aguardando resolução':'Ativa' ?></span></div>
 <dl class="cx-summary"><div><dt>Início</dt><dd><?= e(brazilDate($current['starts_at'])) ?></dd></div><div><dt>Prazo</dt><dd><?= e(brazilDate($current['ends_at'])) ?></dd></div><div><dt>Partidas</dt><dd><?= $metrics['matches'] ?></dd></div></dl>

@@ -21,7 +21,6 @@ body .site-navigation-content{overflow:visible;max-height:none}
   body .site-account-name{display:inline;max-width:160px}
 }
 @media(max-width:639px){
-  body .site-header-inner{padding-inline:16px}
   body .site-primary-nav{grid-template-columns:minmax(0,1fr)}
   body .site-account-name{max-width:120px}
   body .site-profile-panel{position:absolute;top:calc(100% + 8px);right:0;margin-top:0;width:min(260px,calc(100vw - 32px))}
